@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Text from "./UI/Text";
+import Text from "./Text";
 
 const ArrowButton = ({ onClick }: any) => {
   return (
