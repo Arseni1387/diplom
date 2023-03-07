@@ -1,19 +1,33 @@
-import React from "react";
-import styled from "styled-components";
-import Input from "./Input";
-import Label from "./Label";
+import styled from 'styled-components'
+import colors from '../../constants/colors'
+import Input from './Input'
 
-const Checkbox = ({ text }: any) => {
+interface Props {
+  text: string
+  id: string
+}
+const Checkbox = ({ text, id }: Props) => {
   return (
     <StyledCheckbox>
-      <Input id={text} type="checkbox" />
-      <Label htmlFor={text} style={{ paddingLeft: "5px" }} text={text} />
+      <Input id={id} type='checkbox' />
+      <CheckboxLabel htmlFor={id}>{text}</CheckboxLabel>
     </StyledCheckbox>
-  );
-};
+  )
+}
 
 const StyledCheckbox = styled.div`
   display: flex;
-`;
+`
 
-export default Checkbox;
+const CheckboxLabel = styled.label`
+  display: flex;
+  margin-top: 12px;
+  padding-left: 5px;
+  text-align: left;
+  font-family: 'Inter Medium';
+  line-height: 19px;
+  font-size: 16px;
+  color: ${colors.grey};
+`
+
+export default Checkbox
